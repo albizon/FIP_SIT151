@@ -27,13 +27,29 @@ Note * creer_nouvelle_note(char *nom,char *prenom,float valeur) {
 }
 
 liste_notes ajouter_note_tete(liste_notes notes,char *nom,char *prenom,float valeur) {
-    // ajoute la note en tête, retourne la nouvelle liste de notes.
-    return NULL;
+    Note *newNote = malloc(sizeof(struct note));
+	newNote->nom = nom;
+	newNote->prenom = prenom;
+	newNote->valeur = valeur;
+	newNote->suivant = notes;
+    return newNote;
 }
 
 
 liste_notes ajouter_note_queue(liste_notes notes,char *nom,char *prenom,float valeur) {
-    // ajoute la note en queue, retourne la nouvelle liste de notes.
+    Note *newNote = malloc(sizeof(struct note));
+	listeNote currentListe = notes;
+	newNote->nom = nom;
+	newNote->prenom = prenom;
+	newNote->valeur = valeur;
+	newNote->suivant = NULL;
+	if(notes == NULL) return newNote;
+	else
+	{
+		while (currentListe->suivant) currentListe = currentListe->suivant;
+		currentListe->suivant = newNote;
+    	return notes;
+	}
 }
 
 
