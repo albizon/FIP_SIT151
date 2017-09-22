@@ -54,7 +54,12 @@ liste_notes ajouter_note_queue(liste_notes notes,char *nom,char *prenom,float va
 
 
 void afficher_notes(liste_notes notes) {
-    // affiche l'ensemble des notes 
+	
+    while(notes !=NULL)
+    {
+	    printf("\n%s - %s : %f\n", notes->nom, notes->prenom, notes->valeur);
+	    notes = notes->suivant;
+	}	    
 }
 
 
