@@ -4,26 +4,23 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_LENGTH_NOM 50
-#define MAX_LENGTH_PRENOM 30
-
 
 typedef struct note {
-    char nom[MAX_LENGTH_NOM];
-    char prenom[MAX_LENGTH_PRENOM];
+    char *nom;
+    char *prenom;
     float valeur;
     struct note *suivant;
-}note;
+}Note;
 
 typedef struct note* liste_notes;
 
 
 
 
-note * creer_nouvelle_note(char *nom,char *prenom,float valeur) {
-    note *newNote = malloc(sizeof(note));
-    strcpy(nom,newNote->nom);
-    strcpy(prenom,newNote->prenom);
+Note * creer_nouvelle_note(char *nom,char *prenom,float valeur) {
+    Note *newNote = malloc(sizeof(struct note));
+	newNote->nom = nom;
+	newNote->prenom = prenom;
     newNote->valeur = valeur;
     newNote->suivant = NULL;
     return newNote;
@@ -52,11 +49,12 @@ float calculer_moyenne(liste_notes notes) {
 
 
 
-int main() {
+void main() {
+
 
     liste_notes notes_SIT151 = NULL;
     
-    note *noteTest = NULL;
+    Note *noteTest = NULL;
     
     noteTest = creer_nouvelle_note("BERNEL","Lucas", 2);
     printf("\n%s - %s : %f\n",noteTest->nom, noteTest->prenom, noteTest->valeur);
@@ -72,5 +70,5 @@ int main() {
     printf("\nLa moyenne est de %0.2f\n\n",calculer_moyenne(notes_SIT151));
     afficher_notes(notes_SIT151);
 
-    return 0;
+    //return 0;
 }
