@@ -64,8 +64,15 @@ void afficher_notes(liste_notes notes) {
 
 
 float calculer_moyenne(liste_notes notes) {
-    // calcule et retourne la moyenne des notes de la liste.
-    return 0;
+	float moyenne =0;
+	int nbNotes = 0;
+    while(notes !=NULL)
+    {
+	    moyenne+=notes->valeur;
+	    notes = notes->suivant;
+	    nbNotes++
+	}
+	return moyenne/=nbNotes;
 }
 
 
