@@ -81,12 +81,6 @@ void main() {
 
 
     liste_notes notes_SIT151 = NULL;
-    
-    Note *noteTest = NULL;
-    
-    noteTest = creer_nouvelle_note("BERNEL","Lucas", 2);
-    printf("\n%s - %s : %f\n",noteTest->nom, noteTest->prenom, noteTest->valeur);
-    
 
     notes_SIT151 = ajouter_note_tete(notes_SIT151,"Kerdreux","Jerome",12.0);
     notes_SIT151 = ajouter_note_tete(notes_SIT151,"Floch","Jean-Yves",14.0);
