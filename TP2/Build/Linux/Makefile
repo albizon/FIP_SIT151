@@ -1,7 +1,7 @@
 test:notes
 	@./notes
 
-notes:notes.c
+notes:../../main.c
 	gcc -g -o notes ../../main.c
 
 clean:
