@@ -12,7 +12,7 @@ typedef struct note {
     char nom[MAX_LENGTH_NOM];
     char prenom[MAX_LENGTH_PRENOM];
     float valeur;
-    note *suivant;
+    struct note *suivant;
 }note;
 
 typedef struct note* liste_notes;
@@ -22,8 +22,8 @@ typedef struct note* liste_notes;
 
 note * creer_nouvelle_note(char *nom,char *prenom,float valeur) {
     note *newNote = malloc(sizeof(note));
-    strcpy(&nom,newNote->nom);
-    strcpy(&prenom,newNote->prenom);
+    strcpy(nom,newNote->nom);
+    strcpy(prenom,newNote->prenom);
     newNote->valeur = valeur;
     newNote->suivant = NULL;
     return newNote;
