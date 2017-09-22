@@ -11,7 +11,7 @@
 typedef struct note {
     char nom[MAX_LENGTH_NOM];
     char prenom[MAX_LENGTH_PRENOM];
-    unsigned float valeur;
+    float valeur;
     note *suivant;
 }note;
 
@@ -20,9 +20,13 @@ typedef struct note* liste_notes;
 
 
 
-struct note * creer_nouvelle_note(char *nom,char *prenom,float valeur) {
-    // retourne une nouvelle note avec nom/prenom/valeur
-    return NULL;
+note * creer_nouvelle_note(char *nom,char *prenom,float valeur) {
+    note *newNote = malloc(sizeof(note);
+    newNote->nom = &nom;
+    newNote->prenom = &prenom;
+    newNote->valeur = valeur;
+    newNote->suivant = NULL;
+    return newNote;
 }
 
 liste_notes ajouter_note_tete(liste_notes notes,char *nom,char *prenom,float valeur) {
