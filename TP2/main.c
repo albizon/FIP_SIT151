@@ -21,9 +21,9 @@ typedef struct note* liste_notes;
 
 
 note * creer_nouvelle_note(char *nom,char *prenom,float valeur) {
-    note *newNote = malloc(sizeof(note);
-    newNote->nom = &nom;
-    newNote->prenom = &prenom;
+    note *newNote = malloc(sizeof(note));
+    strcpy(&nom,newNote->nom);
+    strcpy(&prenom,newNote->prenom);
     newNote->valeur = valeur;
     newNote->suivant = NULL;
     return newNote;
@@ -55,6 +55,12 @@ float calculer_moyenne(liste_notes notes) {
 int main() {
 
     liste_notes notes_SIT151 = NULL;
+    
+    note *noteTest = NULL;
+    
+    noteTest = creer_nouvelle_note("BERNEL","Lucas", 2);
+    printf("\n%s - %s : %f\n",noteTest->nom, noteTest->prenom, noteTest->valeur);
+    
 
     notes_SIT151 = ajouter_note_tete(notes_SIT151,"Kerdreux","Jerome",12.0);
     notes_SIT151 = ajouter_note_tete(notes_SIT151,"Floch","Jean-Yves",14.0);
