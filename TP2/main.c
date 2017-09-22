@@ -38,7 +38,7 @@ liste_notes ajouter_note_tete(liste_notes notes,char *nom,char *prenom,float val
 
 liste_notes ajouter_note_queue(liste_notes notes,char *nom,char *prenom,float valeur) {
     Note *newNote = malloc(sizeof(struct note));
-	listeNote currentListe = notes;
+	liste_notes currentListe = notes;
 	newNote->nom = nom;
 	newNote->prenom = prenom;
 	newNote->valeur = valeur;
@@ -46,7 +46,7 @@ liste_notes ajouter_note_queue(liste_notes notes,char *nom,char *prenom,float va
 	if(notes == NULL) return newNote;
 	else
 	{
-		while (currentListe->suivant) currentListe = currentListe->suivant;
+		while (currentListe->suivant != NULL) currentListe = currentListe->suivant;
 		currentListe->suivant = newNote;
     	return notes;
 	}
