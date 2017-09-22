@@ -70,7 +70,7 @@ float calculer_moyenne(liste_notes notes) {
     {
 	    moyenne+=notes->valeur;
 	    notes = notes->suivant;
-	    nbNotes++
+	    nbNotes++;
 	}
 	return moyenne/=nbNotes;
 }
