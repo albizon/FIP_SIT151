@@ -4,9 +4,16 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define MAX_LENGTH_NOM 50
+#define MAX_LENGTH_PRENOM 30
 
-struct note {
-};
+
+typedef struct note {
+    char nom[MAX_LENGTH_NOM];
+    char prenom[MAX_LENGTH_PRENOM];
+    unsigned float valeur;
+    note *suivant;
+}note;
 
 typedef struct note* liste_notes;
 
